@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    image: "fastapi_sample:1"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi_sample
+    ports:
+      - '8989:8989'
