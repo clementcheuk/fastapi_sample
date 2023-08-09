@@ -41,6 +41,9 @@ pipeline {
             steps{
                 sh '''
                 ssh -i /home/clement/private_key_master vagrant@192.168.56.2 \\
+                helm uninstall gitapp
+
+                ssh -i /home/clement/private_key_master vagrant@192.168.56.2 \\
                 helm install gitapp gitrepo/demochart
                 '''
             }
