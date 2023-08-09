@@ -23,7 +23,7 @@ pipeline {
         stage('push image to dockerhub'){
             steps{
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u cheukub --password-stdin'
-                // sh 'docker tag fastapi_sample:$IMAGE_VERSION cheukub/fastapi_sample:$IMAGE_VERSION'
+                sh 'docker tag fastapi_sample:$IMAGE_VERSION cheukub/fastapi_sample:$IMAGE_VERSION'
                 sh 'docker push cheukub/$IMAGE_NAME:$IMAGE_VERSION'
             }
         }
